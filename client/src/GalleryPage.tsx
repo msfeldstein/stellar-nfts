@@ -18,7 +18,7 @@ function GalleryPage() {
       <header>
         The Gallery
       </header>
-      {data.map(nft => <GalleryTile key={nft.ipfsKey} nft={nft} />)}
+      {data.map(nft => <GalleryTile key={nft.assetIssuer} nft={nft} />)}
     </div>
   );
 }

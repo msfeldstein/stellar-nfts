@@ -34,9 +34,7 @@ export default async function getNFTsForAccount(accountId: string, horizon: stri
 
     // Encode the hex cid back into base58 to use with IPFS
     const bytes = Uint8Array.from(Buffer.from(hexMemoWithPrefix, 'hex'))
-
     const ipfsKey = bs58.encode(bytes)
-    console.log("IPFS")
     return {
       ipfsKey,
       owner: accountId,

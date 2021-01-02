@@ -1,4 +1,3 @@
-import { NotFoundError } from "stellar-sdk"
 import getNFTsForAccount from "./getNFTsForAccount"
 import mint from "./mint"
 
