@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NFT, { NFTData } from 'stellar-nft';
 import GalleryTile from './GalleryTile';
-
+import './GalleryPage.css'
 
 function GalleryPage() {
   const [data, setData] = useState<NFTData[]>([])
@@ -18,7 +18,9 @@ function GalleryPage() {
       <header>
         The Gallery
       </header>
-      {data.map(nft => <GalleryTile key={nft.assetIssuer} nft={nft} />)}
+      <div className="tile-set">
+        {data.map(nft => <GalleryTile key={nft.assetIssuer} nft={nft} />)}
+      </div>
     </div>
   );
 }
