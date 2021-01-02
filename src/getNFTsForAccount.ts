@@ -2,6 +2,16 @@ import * as StellarSdk from 'stellar-sdk'
 import bs58 from 'bs58'
 import { NFTData } from "./types"
 
+// Base64 to Hex
+function base64ToHex(str: string) : string {
+    for (var i = 0, bin = atob(str.replace(/[ \r\n]+$/, "")), hex = []; i < bin.length; ++i) {
+        let tmp = bin.charCodeAt(i).toString(16);
+        if (tmp.length === 1) tmp = "0" + tmp;
+        hex[hex.length] = tmp;
+    }
+    return hex.join("");
+}
+
 export default async function getNFTsForAccount(accountId: string, horizon: string = "https://horizon-testnet.stellar.org") {
   const server = new StellarSdk.Server(horizon);
 
@@ -17,12 +27,16 @@ export default async function getNFTsForAccount(accountId: string, horizon: stri
     // We should do some verification that this is a valid NFT: Single TX, memo type 'hash', locked account
     const transactions = await server.transactions().forAccount(issuer).call()
     const transaction = transactions.records[0]
+    if (!transaction.memo) throw "No memo on NFT Transaction"
+    const base64Memo = transaction.memo
     // We assume the 1220 (Qm) prefix for all ipfs addresses
-    const base64Memo = '1220' + transaction.hash
-    // Encode the hex cid back into base58 to use with IPFS
-    const bytes = Uint8Array.from(Buffer.from(base64Memo, 'hex'))
-    const ipfsKey = bs58.encode(bytes)
+    const hexMemoWithPrefix = '1220' + base64ToHex(base64Memo)
 
+    // Encode the hex cid back into base58 to use with IPFS
+    const bytes = Uint8Array.from(Buffer.from(hexMemoWithPrefix, 'hex'))
+
+    const ipfsKey = bs58.encode(bytes)
+    console.log("IPFS")
     return {
       ipfsKey,
       owner: accountId,

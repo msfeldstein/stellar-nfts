@@ -1,2 +1,10 @@
-export * as getNFTsForAccount from './getNFTsForAccount'
-export * as mint from './mint'
+import { NotFoundError } from "stellar-sdk"
+import getNFTsForAccount from "./getNFTsForAccount"
+import mint from "./mint"
+
+export default {
+  getNFTsForAccount,
+  mint
+}
+
+export * from "./types"
