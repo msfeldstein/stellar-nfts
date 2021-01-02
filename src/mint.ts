@@ -1,4 +1,3 @@
-import IPFS from 'ipfs-core'
 import ipfsClient from 'ipfs-http-client'
 import * as StellarSdk from 'stellar-sdk'
 import bs58 from 'bs58'

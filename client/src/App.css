@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+header {
+  text-align: center;
+  font-family: 'Raleway';
+  font-size: 128px;
+  margin: 64px;
+
+}
