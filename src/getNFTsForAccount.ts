@@ -40,7 +40,9 @@ export default async function getNFTsForAccount(accountId: string, horizon: stri
     return {
       ipfsKey,
       owner: accountId,
-      creator: "Unknown"
+      creator: "Unknown",
+      minter: "",
+      assetIssuer: issuer
     }
   }))
 

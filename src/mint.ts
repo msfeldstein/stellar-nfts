@@ -79,6 +79,8 @@ export default async function mint(bytes: ArrayBuffer, serviceAccountSecret: str
   return {
     owner: serviceAccountKP.publicKey(),
     ipfsKey: contentID,
-    creator: serviceAccountKP.publicKey()
+    creator: serviceAccountKP.publicKey(),
+    minter: serviceAccountKP.publicKey(),
+    assetIssuer: tokenAccountKP.publicKey()
   }
 }
