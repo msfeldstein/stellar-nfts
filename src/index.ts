@@ -1,2 +1,2 @@
-export * from './getNFTsForAccount'
-export * from './mint'
+export * as getNFTsForAccount from './getNFTsForAccount'
+export * as mint from './mint'

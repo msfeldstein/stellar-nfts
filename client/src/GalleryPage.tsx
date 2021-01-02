@@ -1,7 +1,8 @@
 import React from 'react';
-import NFTs from "stellar-nft"
+import * as NFTs from "stellar-nft"
 function GalleryPage() {
-  console.log({NFTs})
+  console.log({ NFTs })
+  debugger
   // console.log({getNFTsForAccount})
   return (
     <div className="GalleryPage">
