@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import NFT, { NFTData } from 'stellar-nft';
-import GalleryTile from './GalleryTile';
-import './GalleryPage.css'
+import React, { useEffect, useState } from "react";
+import NFT, { NFTData } from "stellar-nft";
+import GalleryTile from "./GalleryTile";
+import "./GalleryPage.css";
 
 function GalleryPage() {
-  const [data, setData] = useState<NFTData[]>([])
+  const [data, setData] = useState<NFTData[]>([]);
   useEffect(() => {
     async function doFetch() {
-      const nfts = await NFT.getNFTsForAccount("GAHFAYFXMAOE223KVUUA42L57HEP3BQ6VJIJ4HUVPWGDFPH2DPM7RTL7")
-      setData(nfts)
+      const nfts = await NFT.getNFTsForAccount(
+        "GAHFAYFXMAOE223KVUUA42L57HEP3BQ6VJIJ4HUVPWGDFPH2DPM7RTL7"
+      );
+      setData(nfts);
     }
-    doFetch()
-  }, [])
+    doFetch();
+  }, []);
 
   return (
     <div className="GalleryPage">
-      <header>
-        The Gallery
-      </header>
+      <header>The Gallery</header>
       <div className="tile-set">
-        {data.map(nft => <GalleryTile key={nft.assetIssuer} nft={nft} />)}
+        {data.map((nft) => (
+          <GalleryTile key={nft.assetIssuer} nft={nft} />
+        ))}
       </div>
     </div>
   );
