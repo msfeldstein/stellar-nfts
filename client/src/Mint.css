@@ -1,0 +1,40 @@
+.mint-form {
+  width: 512px;
+  margin: auto;
+}
+
+.file-drop {
+  width: 256px;
+  font-size: 0;
+  border: 1px solid rgb(61, 61, 61);
+  border-collapse: collapse;
+}
+
+.file-drop-message {
+  height: 256px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-drop-target img {
+  width: 100%;
+}
+
+.file-drop-dragging-over-target {
+  background-color: rgb(199, 199, 199);
+}
+
+.hidden {
+  display: none;
+}
+
+.logs {
+  background-color: rgb(231, 231, 231);
+  white-space: pre;
+  font-size: 12px;
+  padding: 16px;
+  margin-top: 32px;
+  overflow-x: scroll;
+}

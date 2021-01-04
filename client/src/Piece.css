@@ -1,0 +1,21 @@
+.piece-content {
+  text-align: center;
+  margin-top: 64px;
+}
+
+.piece-tile {
+  margin: auto;
+}
+
+.offer-container {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.offer-row {
+  margin-top: 8px;
+}
+
+.piece-content:not(.owned) button.small {
+  display: none;
+}

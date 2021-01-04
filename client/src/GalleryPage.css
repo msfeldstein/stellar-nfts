@@ -10,7 +10,6 @@
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 300px;
-  text-align: right;
   margin: 32px;
 }
 
@@ -18,9 +17,19 @@
   width: 256px;
   flex-grow: 0;
   flex-shrink: 0;
+  text-align: right;
   font-family: "IBM Plex Mono";
+}
+
+.piece-tile .tile {
+  width: 100%;
 }
 
 .tile img {
   width: 100%;
+}
+
+.tile a {
+  color: blue;
+  text-decoration: none;
 }

@@ -4,6 +4,20 @@
 html,
 body {
   overflow-x: hidden;
+  font-family: "IBM Plex Mono";
+  padding-bottom: 32px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+nav a {
+  color: black;
+  margin-right: 16px;
+  margin-top: 16px;
 }
 
 header {
@@ -11,4 +25,48 @@ header {
   font-family: "Raleway";
   font-size: 128px;
   margin: 64px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 100;
+}
+
+button {
+  background-color: white;
+  border: 1px solid rgba(61, 61, 61);
+  border-radius: 4px;
+  padding: 8px;
+  font-family: Raleway;
+  transition: background-color 0.1s;
+}
+
+button:hover {
+  background: rgb(240, 240, 240);
+}
+
+button.large {
+  font-size: 16px;
+}
+
+button.small {
+  font-family: "IBM Plex Mono";
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.content {
+  max-width: 600px;
+  margin: auto;
+}
+
+.loading-container {
+  margin-top: 128px;
+  width: 100%;
+  text-align: center;
+}
+
+.loading-container div {
+  display: inline-block;
+  margin: auto;
 }

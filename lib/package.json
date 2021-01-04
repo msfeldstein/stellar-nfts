@@ -1,13 +1,14 @@
 {
-  "name": "stellar-nft",
-  "version": "1.0.0",
+  "name": "stellar-nfts",
+  "version": "0.8.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && tsc -p .",
-    "clean": "rm -rf ./dist",
-    "test": "nodemon "
+    "build:watch": "npm run clean && tsc -p . -w",
+    "clean": "rm -rf ./dist"
   },
   "dependencies": {
     "bs58": "^4.0.1",
