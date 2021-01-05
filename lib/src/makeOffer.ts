@@ -26,6 +26,7 @@ export default async function makeOffer(
   const account = await server.loadAccount(params.offeringAccount);
   const fee = await server.fetchBaseFee();
   const asset = new Asset("NFT", params.tokenIssuer);
+
   const tx = new TransactionBuilder(account, {
     fee: fee.toString(),
     networkPassphrase: passphrase,
@@ -40,7 +41,7 @@ export default async function makeOffer(
         buyAmount: "0.0000001",
         buying: asset,
         selling: Asset.native(),
-        price: params.xlmAmount,
+        price: { n: Math.floor(parseFloat(params.xlmAmount) * 10000000), d: 1 },
       })
     )
     .setTimeout(30)

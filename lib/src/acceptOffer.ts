@@ -25,8 +25,7 @@ export default async function acceptOffer(
   const server = new Server(horizon);
 
   const offers = await getOffers(params.tokenIssuer);
-  console.log("PRICE", offers[0]);
-  return;
+  const price = offers[0].price;
   const account = await server.loadAccount(params.sellingAccount);
   const fee = await server.fetchBaseFee();
   const asset = new Asset("NFT", params.tokenIssuer);
@@ -42,7 +41,7 @@ export default async function acceptOffer(
         // TODO we should pull the highest offer and use that limit, but
         // in the sake of time im just setting the price to 0 and it will match the highest offer.
         // Hopefully it doesn't get cancelled in the meantime.
-        price: offers[0].price,
+        price: offers[0].price * 10000000,
       })
     )
     .setTimeout(30)
